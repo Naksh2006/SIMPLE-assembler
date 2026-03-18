@@ -1,0 +1,18 @@
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.class
+
+# Linux/Mac default output
+a.out
+
+# Build folders
+/build/
+/bin/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
