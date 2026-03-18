@@ -1,0 +1,4 @@
+Assembly successful
+
+Warning: Line 6: branch instruction will cause infinite loop
+Warning: Program has no HALT instruction (possible infinite execution)

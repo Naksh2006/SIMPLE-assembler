@@ -1,0 +1,11 @@
+Assembly failed
+
+Line 4: Duplicate label
+Line 5: Undefined label
+Line 6: Invalid number format
+Line 7: Missing operand
+Line 8: Unexpected operand
+Line 9: Extra operand
+Line 10: Invalid label name
+Line 11: Invalid mnemonic
+Line 12: Invalid mnemonic

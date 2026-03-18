@@ -1,0 +1,198 @@
+TITLE:  Claims
+AUTHOR: Nakshtra Goyal
+ROLL NO: 2401CS44
+
+Declaration of Authorship
+------------------------------------------------------------
+This project submission is my original work. All source code,
+assembly programs, test files and documentation included in
+this submission were written and tested by me.
+
+Files Included
+------------------------------------------------------------
+The submission contains the following files:
+
+Source Code 
+- asm.cpp : Source code for the two-pass assembler.
+- emu.cpp : Source code for the SIMPLE machine emulator.
+- claims.txt : description of the claims for this submission
+
+Test Assembly Programs
+- test1.asm : Provided sample program (valid assembly).
+- test2.asm : Program containing intentional syntax errors.
+- test3.asm : Test program for SET pseudo instruction.
+- test4.asm : Additional test program.
+- fibonacci_sequence.asm : Program to generate Fibonacci numbers.
+- max.asm : Program to find maximum element in an array.
+- sum_of_array.asm : Program to compute sum of array elements.
+- bubble_sort.asm : Bubble sort implementation in SIMPLE assembly.
+- error_test.asm : Program designed to test assembler error handling.
+
+Generated Output Files
+Each test program produces the following files:
+- .o   (object file produced by assembler) // not generated in test2.asm and error_test.asm
+- .lst (listing file)                       // not generated in test2.asm and error_test.asm
+- .log (assembler log file)
+
+Additional emulator outputs:
+- memory dump files generated using emulator options.
+
+Compilation Claims
+------------------------------------------------------------
+Both programs compile successfully using the GNU C++ compiler
+without errors.
+
+Assembler:
+g++ asm.cpp -o asm
+
+Emulator:
+g++ emu.cpp -o emu
+
+The code compiles successfully and runs correctly on the
+MAC OS sequoia environment.
+
+Assembler Implementation
+------------------------------------------------------------
+The assembler is implemented as a two-pass assembler.
+
+Pass 1:
+- Parses assembly source lines.
+- Removes comments and whitespace.
+- Identifies labels and builds the symbol table.
+- Detects duplicate or invalid labels.
+
+Pass 2:
+- Generates machine code.
+- Resolves operands and labels.
+- Calculates branch offsets for branch instructions.
+- Produces machine instructions.
+
+Assembler Features:
+- Instruction table containing opcode definitions.
+- Detection of common assembly errors:
+  * Duplicate labels
+  * Undefined labels
+  * Invalid mnemonics
+  * Missing operands
+  * Extra operands
+  * Invalid number formats
+- Generates object file (.o) in binary format.
+- Generates human readable listing file (.lst).
+- Generates log file (.log) with errors and warnings.
+- Supports SET pseudo instruction.
+- Supports DATA directive.
+
+Listing File
+------------------------------------------------------------
+The assembler generates a listing file showing:
+
+Address | Machine Code | Instruction
+
+Example format:
+00000000 00000111 ldc 5
+
+Labels are also displayed in the listing output.
+
+Emulator Implementation
+------------------------------------------------------------
+The emulator simulates the SIMPLE machine architecture.
+
+Registers implemented:
+- A (Accumulator)
+- B (Register B)
+- PC (Program Counter)
+- SP (Stack Pointer)
+
+Features of the emulator:
+- Loads object file into memory.
+- Decodes machine instructions.
+- Executes instructions according to opcode.
+- Supports all instructions defined in the SIMPLE ISA.
+- Detects invalid memory accesses.
+- Detects illegal opcodes.
+- Stops execution on HALT instruction.
+- Limits instruction execution to avoid infinite loops.
+
+Additional emulator options implemented:
+- -trace   : shows register state during execution
+- -before  : memory dump before execution
+- -after   : memory dump after execution
+- -isa     : prints supported instruction set
+
+
+Assembler Test Cases
+------------------------------------------------------------
+
+test 1 (test1.asm)
+Valid assembly program.
+print warnings infinite loop
+Result: Assembles successfully.
+
+test 2 (test2.asm)
+Contains multiple errors including duplicate labels,
+invalid numbers and missing operands.
+Result: Assembler correctly detects errors.
+
+test 3 (test3.asm)
+Program demonstrating SET pseudo instruction.
+Result: Assembles successfully.
+
+test 4 (test4.asm)
+Additional valid test program.
+printing triangle numbers
+Result: Assembles successfully.
+
+Additional algorithm programs:
+
+Fibonacci (fibonacci_sequence.asm)
+Generates Fibonacci numbers and stores them in memory.
+currenlty the code is doing printing the 6th Fibonacci number.
+
+Maximum in Array (max_array.asm)
+Finds maximum value in an array.
+
+Sum of Array (sum_array.asm)
+Computes sum of elements of an array.
+
+Bubble Sort (bubblesort.asm)
+Implements bubble sort algorithm to sort array elements.
+
+Error Test (error_test.asm)
+Used to verify assembler error detection.
+
+
+Emulator Testing
+------------------------------------------------------------
+
+The emulator was tested using the object files generated
+by the assembler.
+
+test1.o
+Result: Program runs and infinite loop detection works.
+
+test3.o
+Result: SET instruction verified correctly.
+
+fibonacci_sequence.o
+Result: Fibonacci numbers correctly generated.
+
+max.o
+Result: Maximum element correctly computed.
+
+sum_of_array.o
+Result: Sum of array elements correctly computed.
+
+bubble_sort.o
+Result: Array sorted correctly in memory dump.
+
+
+Conclusion
+------------------------------------------------------------
+The assembler successfully converts SIMPLE assembly programs
+into machine code while detecting syntax and semantic errors.
+
+The emulator successfully loads the generated object files
+and executes the programs correctly.
+
+Additional algorithm programs demonstrate correct operation
+of the assembler and emulator.
